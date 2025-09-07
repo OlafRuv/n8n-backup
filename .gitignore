@@ -1,0 +1,68 @@
+# n8n Data Directory - Datos sensibles de n8n
+n8n_data/
+
+# Archivos de base de datos
+*.sqlite
+*.sqlite3
+*.db
+
+# Archivos de configuración sensibles
+config
+*.env
+.env*
+
+# Archivos de log
+*.log
+n8nEventLog.log
+crash.journal
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de backup (opcional - descomenta si no quieres subir backups)
+# backups/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de Docker
+.dockerignore
+
+# Archivos de credenciales SSH
+ssh/
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Archivos de certificados
+*.crt
+*.p12
+*.pfx
+
+# Archivos de configuración de Docker Compose con secretos
+docker-compose.override.yml
+docker-compose.prod.yml
+
+# Archivos de variables de entorno
+.env.local
+.env.production
+.env.development
+
+# Archivos de backup de n8n (si decides no subirlos)
+# n8n_backup_*
+
+# Archivos de cache
+.cache/
+node_modules/
+
+# Archivos de logs de Docker
+docker-compose.log
