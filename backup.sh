@@ -36,6 +36,24 @@ echo "✅ Backup completado en: $BACKUP_DIR"
 # Git commit desde el directorio raíz (donde está el repo)
 echo "📝 Haciendo commit al repositorio..."
 git add "$BACKUP_DIR"
-git commit -m "Backup n8n $DATE - workflows y datos importantes"
 
-echo "🎉 Backup y commit completados exitosamente"
+if git commit -m "Backup n8n $DATE - workflows y datos importantes"; then
+    echo "✅ Commit realizado exitosamente"
+    
+    # Git push al repositorio remoto
+    echo "🚀 Subiendo cambios al repositorio remoto..."
+    if git push origin main; then
+        echo "✅ Push realizado exitosamente"
+        echo "🎉 Backup, commit y push completados exitosamente"
+    else
+        echo "❌ Error: Falló el push al repositorio remoto"
+        echo "⚠️  El backup local se creó correctamente, pero no se subió al remoto"
+        echo "💡 Puedes intentar hacer 'git push origin main' manualmente más tarde"
+        exit 1
+    fi
+else
+    echo "❌ Error: Falló el commit al repositorio local"
+    echo "⚠️  El backup local se creó correctamente, pero no se hizo commit"
+    echo "💡 Puedes intentar hacer 'git add .' y 'git commit' manualmente"
+    exit 1
+fi
