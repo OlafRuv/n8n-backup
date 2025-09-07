@@ -1,0 +1,11 @@
+Backup de n8n
+Fecha: 2025-09-06_21-20-13
+Contenido:
+- database.sqlite (workflows, credenciales, historial)
+- binaryData/ (archivos adjuntos)
+- nodes/ (nodos personalizados)
+
+Archivos EXCLUIDOS por seguridad:
+- config (contiene claves de encriptación)
+- ssh/ (claves SSH privadas)
+- *.log (logs con información sensible)
